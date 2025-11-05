@@ -143,6 +143,10 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 ![Wallet Connection](screenshots/Screenshot%202025-11-05%20at%209.01.02%20AM.png)
 *Connect your wallet (Coinbase Wallet, MetaMask, WalletConnect) - fully functional wallet integration with real blockchain connections*
 
+### 16. Revenue Dashboard (🚧 WIP - Mock Data)
+![Revenue Dashboard](screenshots/Screenshot%202025-11-05%20at%209.06.10%20AM.png)
+*Track earnings from paid agents - UI complete with stats and transaction history (currently displays mock data, real blockchain integration WIP)*
+
 ## 🚀 Installation
 
 ### Prerequisites
