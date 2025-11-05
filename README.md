@@ -1,10 +1,6 @@
 # Wadah Desktop - AI Agent Management Platform
 
 <p align="center">
-  <img src="assets/icon.png" alt="Wadah Logo" width="120" />
-</p>
-
-<p align="center">
   <strong>A beautiful desktop application for building, managing, and distributing AI agents</strong>
 </p>
 
