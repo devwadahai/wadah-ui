@@ -18,6 +18,8 @@ import {
   Package,
   Settings,
   Boxes,
+  Coins,
+  TrendingUp,
 } from "lucide-react";
 import { Link, useLocation } from "wouter";
 
@@ -25,6 +27,8 @@ const menuItems = [
   { title: "Dashboard", url: "/", icon: LayoutDashboard },
   { title: "Agents", url: "/agents", icon: Bot },
   { title: "Templates", url: "/templates", icon: FileText },
+  { title: "Marketplace", url: "/marketplace", icon: Coins },
+  { title: "Revenue", url: "/revenue", icon: TrendingUp },
   { title: "Runs", url: "/runs", icon: Activity },
   { title: "Registry", url: "/registry", icon: Package },
   { title: "Settings", url: "/settings", icon: Settings },

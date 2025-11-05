@@ -97,12 +97,12 @@ export default function Settings() {
       </div>
 
       {/* API Keys */}
-      <Card>
-        <CardHeader>
-          <CardTitle>API Keys</CardTitle>
-          <CardDescription>
+          <Card>
+            <CardHeader>
+                  <CardTitle>API Keys</CardTitle>
+                  <CardDescription>
             Configure API keys for AI model providers
-          </CardDescription>
+                  </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
           {saveResult && (
@@ -130,14 +130,14 @@ export default function Settings() {
                 value={openaiKey}
                 onChange={(e) => setOpenaiKey(e.target.value)}
               />
-              <Button
+                    <Button
                 variant="outline"
-                size="icon"
+                      size="icon"
                 onClick={() => setShowOpenaiKey(!showOpenaiKey)}
-              >
+                    >
                 {showOpenaiKey ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
-              </Button>
-            </div>
+                    </Button>
+                  </div>
             <p className="text-xs text-muted-foreground">
               Required for running agents with OpenAI models (gpt-4, gpt-3.5-turbo, etc.)
             </p>
@@ -157,19 +157,19 @@ export default function Settings() {
             <p className="text-xs text-muted-foreground">
               For local Ollama models (llama2, mistral, etc.)
             </p>
-          </div>
+              </div>
 
           <Button onClick={saveApiKeys} disabled={saving || !openaiKey}>
             {saving && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             <Save className="mr-2 h-4 w-4" />
             Save API Keys
           </Button>
-        </CardContent>
-      </Card>
+            </CardContent>
+          </Card>
 
       {/* Wadah CLI Connection */}
-      <Card>
-        <CardHeader>
+          <Card>
+            <CardHeader>
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="flex items-center gap-2">
@@ -189,8 +189,8 @@ export default function Settings() {
               Test Connection
             </Button>
           </div>
-        </CardHeader>
-        <CardContent className="space-y-4">
+            </CardHeader>
+            <CardContent className="space-y-4">
           {testResult && (
             <Alert variant={testResult.success ? "default" : "destructive"}>
               <div className="flex items-start gap-2">
@@ -213,7 +213,7 @@ export default function Settings() {
                         )}
                       </div>
                     ) : (
-                      <div className="space-y-2">
+              <div className="space-y-2">
                         <p className="font-medium">❌ Connection Failed</p>
                         <p className="text-sm">{testResult.error}</p>
                         <p className="text-xs mt-2">
@@ -233,8 +233,8 @@ export default function Settings() {
               <code className="block p-2 bg-muted rounded text-xs">
                 /Users/hsp/Projects/wadah-engine/target/release/wadah
               </code>
-            </div>
-            <div className="space-y-2">
+              </div>
+              <div className="space-y-2">
               <label className="text-sm font-medium">Status</label>
               <div>
                 {testResult === null ? (
@@ -247,20 +247,20 @@ export default function Settings() {
               </div>
             </div>
           </div>
-        </CardContent>
-      </Card>
+            </CardContent>
+          </Card>
 
       {/* Workspace Locations */}
-      <Card>
-        <CardHeader>
+          <Card>
+            <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <FolderOpen className="h-5 w-5" />
             Workspace Locations
           </CardTitle>
-          <CardDescription>
+              <CardDescription>
             Where your agents, packages, and traces are stored
-          </CardDescription>
-        </CardHeader>
+              </CardDescription>
+            </CardHeader>
         <CardContent>
           <div className="space-y-4">
             <div className="space-y-2">
@@ -273,7 +273,7 @@ export default function Settings() {
               </p>
             </div>
 
-            <div className="space-y-2">
+              <div className="space-y-2">
               <label className="text-sm font-medium">Packages Directory</label>
               <code className="block p-3 bg-muted rounded text-xs font-mono">
                 ~/wadah-workspace/packages/
@@ -281,9 +281,9 @@ export default function Settings() {
               <p className="text-xs text-muted-foreground">
                 Built .wpkg packages ready for distribution
               </p>
-            </div>
+              </div>
 
-            <div className="space-y-2">
+              <div className="space-y-2">
               <label className="text-sm font-medium">Environment Config</label>
               <code className="block p-3 bg-muted rounded text-xs font-mono">
                 ~/Library/Application Support/wadah-desktop/env-config.json
@@ -333,8 +333,8 @@ export default function Settings() {
               </div>
             ))}
           </div>
-        </CardContent>
-      </Card>
+            </CardContent>
+          </Card>
     </div>
   );
 }

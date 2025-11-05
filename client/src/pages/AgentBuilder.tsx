@@ -127,7 +127,7 @@ export default function AgentBuilder() {
               </>
             ) : (
               <>
-                <Play className="h-4 w-4 mr-2" />
+            <Play className="h-4 w-4 mr-2" />
                 Create Agent
               </>
             )}
@@ -172,35 +172,35 @@ export default function AgentBuilder() {
       )}
 
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card>
-          <CardHeader>
+              <Card>
+                <CardHeader>
             <CardTitle>Agent Configuration</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
-            <div className="space-y-2">
+                </CardHeader>
+                <CardContent className="space-y-4">
+                  <div className="space-y-2">
               <Label htmlFor="name">Agent Name *</Label>
-              <Input
-                id="name"
+                    <Input
+                      id="name"
                 placeholder="e.g., my-support-bot"
-                value={formData.name}
-                onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      value={formData.name}
+                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 disabled={creating}
-              />
+                    />
               <p className="text-xs text-muted-foreground">
                 Use lowercase with hyphens (e.g., my-agent-name)
               </p>
-            </div>
+                  </div>
 
-            <div className="space-y-2">
-              <Label htmlFor="description">Description</Label>
-              <Textarea
-                id="description"
-                placeholder="What does this agent do?"
-                value={formData.description}
-                onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                  <div className="space-y-2">
+                    <Label htmlFor="description">Description</Label>
+                    <Textarea
+                      id="description"
+                      placeholder="What does this agent do?"
+                      value={formData.description}
+                      onChange={(e) => setFormData({ ...formData, description: e.target.value })}
                 disabled={creating}
-              />
-            </div>
+                    />
+                  </div>
 
             <div className="space-y-2">
               <Label htmlFor="security">Security Level</Label>
@@ -242,14 +242,14 @@ export default function AgentBuilder() {
                 </SelectContent>
               </Select>
             </div>
-          </CardContent>
-        </Card>
+                </CardContent>
+              </Card>
 
-        <Card>
-          <CardHeader>
+              <Card>
+                <CardHeader>
             <CardTitle>Command Preview</CardTitle>
-          </CardHeader>
-          <CardContent className="space-y-4">
+                </CardHeader>
+                <CardContent className="space-y-4">
             <div>
               <Label>Command that will be executed:</Label>
               <pre className="mt-2 text-xs font-mono bg-muted p-4 rounded-md overflow-auto">
@@ -262,11 +262,11 @@ export default function AgentBuilder() {
               )}
             </div>
 
-            <div className="space-y-2">
+                  <div className="space-y-2">
               <Label>Output Location</Label>
               <div className="font-mono text-xs bg-muted p-3 rounded-md">
                 {workspacePath}
-              </div>
+                  </div>
               <p className="text-xs text-muted-foreground">
                 Agent will be created at: <span className="font-semibold">{workspacePath}/{formData.name || '&lt;name&gt;'}</span>
               </p>
@@ -275,7 +275,7 @@ export default function AgentBuilder() {
                   <span className="font-semibold">ℹ️ Workspace Info:</span> All agents are stored in your home directory's Wadah workspace. 
                   This keeps your agent files separate from the UI source code and makes them easy to backup.
                 </p>
-              </div>
+                  </div>
             </div>
 
             <div className="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800 rounded-lg p-4">
@@ -288,8 +288,8 @@ export default function AgentBuilder() {
                 <li>✓ Create README with instructions</li>
               </ul>
             </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
       </div>
     </div>
   );

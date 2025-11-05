@@ -86,33 +86,33 @@ export default function Agents() {
       } else {
         // Fallback to mock data
         setAgents([
-          {
-            id: '1',
-            name: 'Support Chatbot',
-            version: '1.0.0',
+    {
+      id: '1',
+      name: 'Support Chatbot',
+      version: '1.0.0',
             status: 'running',
-            runCount: 1247,
-            image: supportIcon,
-            description: 'Handles customer support inquiries with AI-powered responses',
-          },
-          {
-            id: '2',
-            name: 'RAG Service',
-            version: '0.1.0',
+      runCount: 1247,
+      image: supportIcon,
+      description: 'Handles customer support inquiries with AI-powered responses',
+    },
+    {
+      id: '2',
+      name: 'RAG Service',
+      version: '0.1.0',
             status: 'paused',
-            runCount: 125,
-            image: ragIcon,
-            description: 'Document retrieval and question answering system',
-          },
-          {
-            id: '3',
-            name: 'DevOps Bot',
-            version: '0.2.1',
+      runCount: 125,
+      image: ragIcon,
+      description: 'Document retrieval and question answering system',
+    },
+    {
+      id: '3',
+      name: 'DevOps Bot',
+      version: '0.2.1',
             status: 'running',
-            runCount: 89,
-            image: devopsIcon,
-            description: 'Automated deployment and monitoring assistant',
-          },
+      runCount: 89,
+      image: devopsIcon,
+      description: 'Automated deployment and monitoring assistant',
+    },
         ]);
       }
     } catch (error) {
@@ -160,9 +160,9 @@ export default function Agents() {
             <RefreshCw className="h-4 w-4" />
           </Button>
           <Button onClick={() => setLocation('/agents/new')}>
-            <Plus className="h-4 w-4 mr-2" />
-            New Agent
-          </Button>
+          <Plus className="h-4 w-4 mr-2" />
+          New Agent
+        </Button>
         </div>
       </div>
 

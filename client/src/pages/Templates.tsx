@@ -112,40 +112,40 @@ export default function Templates() {
       setTemplates([
         {
           id: 'customer-support',
-          name: 'Customer Support Bot',
+      name: 'Customer Support Bot',
           description: 'Pre-configured chatbot for handling customer inquiries',
-          image: supportIcon,
-          tags: ['chatbot', 'support', 'NLP'],
-          rating: 4.8,
-          downloads: 1240,
-        },
-        {
+      image: supportIcon,
+      tags: ['chatbot', 'support', 'NLP'],
+      rating: 4.8,
+      downloads: 1240,
+    },
+    {
           id: 'langchain-rag',
-          name: 'RAG Document QA',
+      name: 'RAG Document QA',
           description: 'LangChain-based RAG system with production deployment',
-          image: ragIcon,
+      image: ragIcon,
           tags: ['RAG', 'LangChain', 'production'],
-          rating: 4.6,
-          downloads: 856,
-        },
-        {
+      rating: 4.6,
+      downloads: 856,
+    },
+    {
           id: 'devops-copilot',
           name: 'DevOps Copilot',
           description: 'Kubernetes and CI/CD automation assistant',
-          image: devopsIcon,
+      image: devopsIcon,
           tags: ['DevOps', 'K8s', 'automation'],
-          rating: 4.5,
-          downloads: 672,
-        },
-        {
+      rating: 4.5,
+      downloads: 672,
+    },
+    {
           id: 'hello-world',
           name: 'Hello World',
           description: 'Minimal starter template for Wadah agents',
-          image: analyticsIcon,
+      image: analyticsIcon,
           tags: ['starter', 'minimal', 'tutorial'],
-          rating: 4.7,
-          downloads: 423,
-        },
+      rating: 4.7,
+      downloads: 423,
+    },
       ]);
     } finally {
       setLoading(false);

@@ -7,6 +7,8 @@ import { SidebarProvider, SidebarTrigger } from "@/components/ui/sidebar";
 import { AppSidebar } from "@/components/AppSidebar";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { useElectron } from "@/hooks/use-electron";
+import { Web3Provider } from "@/components/Web3Provider";
+import { WalletConnect } from "@/components/WalletConnect";
 import Dashboard from "@/pages/Dashboard";
 import Agents from "@/pages/Agents";
 import Templates from "@/pages/Templates";
@@ -18,6 +20,8 @@ import RunMonitor from "@/pages/RunMonitor";
 import RunNew from "@/pages/RunNew";
 import Registry from "@/pages/Registry";
 import RegistryDetails from "@/pages/RegistryDetails";
+import PaidAgents from "@/pages/PaidAgents";
+import Revenue from "@/pages/Revenue";
 import Settings from "@/pages/Settings";
 import NotFound from "@/pages/not-found";
 
@@ -35,6 +39,8 @@ function Router() {
       <Route path="/runs/:id" component={RunMonitor} />
       <Route path="/registry" component={Registry} />
       <Route path="/registry/:packageId" component={RegistryDetails} />
+      <Route path="/marketplace" component={PaidAgents} />
+      <Route path="/revenue" component={Revenue} />
       <Route path="/settings" component={Settings} />
       <Route path="/:rest*" component={NotFound} />
     </Switch>
@@ -51,30 +57,33 @@ function App() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <SidebarProvider style={style as React.CSSProperties}>
-          <div className="flex h-screen w-full">
-            <AppSidebar />
-            <div className="flex flex-col flex-1 overflow-hidden">
-              <header className="flex items-center justify-between px-6 py-3 border-b flex-shrink-0">
-                <SidebarTrigger data-testid="button-sidebar-toggle" />
-                <div className="flex items-center gap-2">
-                  {isElectron && (
-                    <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded">
-                      Desktop
-                    </span>
-                  )}
-                  <ThemeToggle />
-                </div>
-              </header>
-              <main className="flex-1 overflow-auto p-6">
-                <Router />
-              </main>
+      <Web3Provider>
+        <TooltipProvider>
+          <SidebarProvider style={style as React.CSSProperties}>
+            <div className="flex h-screen w-full">
+              <AppSidebar />
+              <div className="flex flex-col flex-1 overflow-hidden">
+                <header className="flex items-center justify-between px-6 py-3 border-b flex-shrink-0">
+                  <SidebarTrigger data-testid="button-sidebar-toggle" />
+                  <div className="flex items-center gap-2">
+                    {isElectron && (
+                      <span className="text-xs text-muted-foreground bg-primary/10 px-2 py-1 rounded">
+                        Desktop
+                      </span>
+                    )}
+                    <WalletConnect />
+                    <ThemeToggle />
+                  </div>
+                </header>
+                <main className="flex-1 overflow-auto p-6">
+                  <Router />
+                </main>
+              </div>
             </div>
-          </div>
-        </SidebarProvider>
-        <Toaster />
-      </TooltipProvider>
+          </SidebarProvider>
+          <Toaster />
+        </TooltipProvider>
+      </Web3Provider>
     </QueryClientProvider>
   );
 }
