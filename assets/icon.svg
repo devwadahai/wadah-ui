@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0095FF;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00E5FF;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="240" fill="url(#grad1)"/>
+  
+  <!-- Container/Box Icon (Wadah means container in Indonesian) -->
+  <!-- Back box layer -->
+  <rect x="140" y="140" width="232" height="200" rx="20" fill="white" opacity="0.2"/>
+  
+  <!-- Middle box layer -->
+  <rect x="120" y="160" width="272" height="200" rx="20" fill="white" opacity="0.3"/>
+  
+  <!-- Front box layer -->
+  <rect x="100" y="180" width="312" height="200" rx="20" fill="white" opacity="0.95"/>
+  
+  <!-- Box details -->
+  <rect x="130" y="240" width="252" height="4" rx="2" fill="#0095FF" opacity="0.6"/>
+  <rect x="130" y="280" width="252" height="4" rx="2" fill="#0095FF" opacity="0.6"/>
+  <rect x="130" y="320" width="252" height="4" rx="2" fill="#0095FF" opacity="0.6"/>
+  
+  <!-- Lid handle -->
+  <rect x="236" y="170" width="40" height="16" rx="8" fill="#0095FF" opacity="0.7"/>
+</svg>
