@@ -1,6 +1,19 @@
-node_modules
-dist
+# Dependencies
+node_modules/
+
+# Build artifacts
+build/
+dist/
+dist-electron/
+release/
+*.wpkg
+
+# Traces
+traces/
+*.jsonl
+
+# Environment
+.env
+
+# OS
 .DS_Store
-server/public
-vite.config.ts.*
-*.tar.gz

@@ -1,0 +1,14 @@
+apiVersion: wadah.ai/v0.1
+kind: Agent
+metadata:
+  name: demo-bot-2
+  version: 0.1.0
+  authors: ["Your Name <you@example.com>"]
+
+runtime:
+  model:
+    provider: openai
+    model_id: gpt-4o-mini
+
+# No security policies - permissive mode
+# Perfect for quick experiments and development
