@@ -57,24 +57,56 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](screenshots/dashboard.png)
-*Overview of your AI agents with real-time statistics and quick actions*
+![Dashboard](screenshots/01-dashboard.png)
+*Main dashboard with real-time statistics, quick actions, and recent activity*
+
+### Agents List
+![Agents List](screenshots/02-agents-list.png)
+*Browse and manage all your AI agents in one place*
 
 ### Agent Builder
-![Agent Builder](screenshots/agent-builder.png)
+![Agent Builder](screenshots/03-agent-builder.png)
 *Create new agents from production-ready templates with easy configuration*
 
-### Run Agent
-![Run Agent](screenshots/run-agent.png)
-*Execute agents with prompts and see real-time output*
+### Agent Details
+![Agent Details](screenshots/04-agent-details.png)
+*View and edit agent configurations*
 
-### Registry & Package Management
-![Registry](screenshots/registry.png)
-*Push and pull packages to/from OCI registries*
+### Templates
+![Templates](screenshots/05-templates.png)
+*Browse available templates for different use cases*
+
+### Template Details
+![Template Details](screenshots/06-template-details.png)
+*Preview template details and clone to create new agents*
+
+### Run Agent
+![Run Agent](screenshots/07-run-agent.png)
+*Execute agents with prompts and configuration*
+
+### Run Output
+![Run Output](screenshots/08-run-output.png)
+*Real-time execution output and results*
+
+### Registry & Packages
+![Registry](screenshots/09-registry.png)
+*Manage local packages and interact with OCI registries*
+
+### Create Package
+![Create Package](screenshots/10-create-package.png)
+*Package agents into distributable .wpkg files*
+
+### Push to Registry
+![Push to Registry](screenshots/11-push-registry.png)
+*Push packages to OCI registries (GitHub, Docker Hub, etc.)*
+
+### Pull from Registry
+![Pull from Registry](screenshots/12-pull-registry.png)
+*Pull packages from OCI registries*
 
 ### Settings
-![Settings](screenshots/settings.png)
-*Manage environment variables and configure the application*
+![Settings](screenshots/13-settings.png)
+*Manage environment variables, API keys, and application settings*
 
 ## 🚀 Installation
 
