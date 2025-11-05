@@ -57,23 +57,23 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 ## 📸 Screenshots
 
 ### Dashboard
-![Dashboard](screenshots/Screenshot%202025-11-03%20at%207.12.32%20PM.png)
+![Dashboard](screenshots/dashboard.png)
 *Overview of your AI agents with real-time statistics and quick actions*
 
 ### Agent Builder
-![Agent Builder](screenshots/Screenshot%202025-11-03%20at%207.14.16%20PM.png)
+![Agent Builder](screenshots/agent-builder.png)
 *Create new agents from production-ready templates with easy configuration*
 
 ### Run Agent
-![Run Agent](screenshots/Screenshot%202025-11-03%20at%207.27.11%20PM.png)
+![Run Agent](screenshots/run-agent.png)
 *Execute agents with prompts and see real-time output*
 
 ### Registry & Package Management
-![Registry](screenshots/Screenshot%202025-11-03%20at%207.28.58%20PM.png)
+![Registry](screenshots/registry.png)
 *Push and pull packages to/from OCI registries*
 
 ### Settings
-![Settings](screenshots/Screenshot%202025-11-03%20at%207.29.57%20PM.png)
+![Settings](screenshots/settings.png)
 *Manage environment variables and configure the application*
 
 ## 🚀 Installation
