@@ -30,6 +30,14 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 - **Run Agents** with real-time output
 - **Package Agents** into distributable `.wpkg` files
 
+### 💰 x402 Crypto Payments (NEW!)
+- **Pay-per-Execution** model for premium agents
+- **Wallet Integration** - Coinbase Wallet, MetaMask, WalletConnect
+- **Multi-Chain Support** - Base, Ethereum, Base Sepolia
+- **Agent Marketplace** - Browse and run paid AI agents
+- **Revenue Dashboard** - Track earnings from your paid agents
+- **USDC Payments** - Low-fee transactions on Base network
+
 ### 📦 Registry Integration
 - **Push to OCI Registries** (GitHub Container Registry, Docker Hub, custom)
 - **Pull from Registries** to share agents across teams
@@ -109,6 +117,14 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 ### 13. Settings - Configure Your Environment
 ![Settings](screenshots/13-settings.png)
 *Manage API keys (OpenAI, Anthropic, Ollama), test CLI connection, and view workspace locations*
+
+### 14. Marketplace - Browse Paid Agents
+![Marketplace](screenshots/Screenshot%202025-11-05%20at%209.00.37%20AM.png)
+*Explore premium AI agents with x402 crypto payments - pay per execution with USDC on Base network*
+
+### 15. Wallet Connection - Web3 Integration
+![Wallet Connection](screenshots/Screenshot%202025-11-05%20at%209.01.02%20AM.png)
+*Connect your wallet (Coinbase Wallet, MetaMask, WalletConnect) to run paid agents and make secure on-chain payments*
 
 ## 🚀 Installation
 
