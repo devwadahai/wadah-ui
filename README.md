@@ -22,6 +22,21 @@
 
 Wadah Desktop is an Electron-based desktop application that provides a modern, intuitive interface for managing AI agents powered by the [Wadah Engine](https://github.com/devwadahai/wadah-engine). Build, test, package, and distribute your AI agents with ease.
 
+### 🚦 Feature Status
+
+| Feature | Status | Notes |
+|---------|--------|-------|
+| Agent Management | ✅ Production | Create, manage, run agents |
+| Registry Integration | ✅ Production | Push/pull to OCI registries |
+| Templates & Builder | ✅ Production | 6+ production-ready templates |
+| Settings & Config | ✅ Production | API keys, environment variables |
+| **x402 Payments** | 🚧 **WIP** | **UI complete, payment execution mock** |
+| Wallet Connection | ✅ Working | Real Web3 wallet integration |
+| Agent Marketplace | 🚧 WIP | UI done, needs real payment flow |
+| Revenue Dashboard | 🚧 WIP | UI only, mock data currently |
+
+> **⚠️ Important**: The x402 crypto payment features show a **complete UI** with **working wallet connections**, but actual payment execution currently uses **mock transactions**. Real USDC payments require additional CDP API setup (~4-6 hours). See [x402 Status](#x402-payment-status) for details.
+
 ## ✨ Features
 
 ### 🤖 Agent Management
@@ -30,13 +45,15 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 - **Run Agents** with real-time output
 - **Package Agents** into distributable `.wpkg` files
 
-### 💰 x402 Crypto Payments (NEW!)
-- **Pay-per-Execution** model for premium agents
-- **Wallet Integration** - Coinbase Wallet, MetaMask, WalletConnect
-- **Multi-Chain Support** - Base, Ethereum, Base Sepolia
-- **Agent Marketplace** - Browse and run paid AI agents
-- **Revenue Dashboard** - Track earnings from your paid agents
-- **USDC Payments** - Low-fee transactions on Base network
+### 💰 x402 Crypto Payments (🚧 WIP - Infrastructure Ready)
+- **Pay-per-Execution** model for premium agents (UI ready, payment execution WIP)
+- **Wallet Integration** - Coinbase Wallet, MetaMask, WalletConnect ✅ Working
+- **Multi-Chain Support** - Base, Ethereum, Base Sepolia ✅ Working
+- **Agent Marketplace** - Browse and run paid AI agents (UI complete, real payments WIP)
+- **Revenue Dashboard** - Track earnings from your paid agents (UI only, mock data)
+- **USDC Payments** - Low-fee transactions on Base network (Integration WIP)
+
+> **⚠️ Status**: Full infrastructure and UI complete. Wallet connection works. Payment execution uses mock transactions currently. Real x402 payment flow requires Coinbase CDP API keys and contract integration (~4-6 hours to implement).
 
 ### 📦 Registry Integration
 - **Push to OCI Registries** (GitHub Container Registry, Docker Hub, custom)
@@ -118,13 +135,13 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 ![Settings](screenshots/13-settings.png)
 *Manage API keys (OpenAI, Anthropic, Ollama), test CLI connection, and view workspace locations*
 
-### 14. Marketplace - Browse Paid Agents
+### 14. Marketplace - Browse Paid Agents (🚧 WIP)
 ![Marketplace](screenshots/Screenshot%202025-11-05%20at%209.00.37%20AM.png)
-*Explore premium AI agents with x402 crypto payments - pay per execution with USDC on Base network*
+*Explore premium AI agents with x402 crypto payments - UI complete, payment execution uses mock transactions (real payments WIP)*
 
-### 15. Wallet Connection - Web3 Integration
+### 15. Wallet Connection - Web3 Integration (✅ Working)
 ![Wallet Connection](screenshots/Screenshot%202025-11-05%20at%209.01.02%20AM.png)
-*Connect your wallet (Coinbase Wallet, MetaMask, WalletConnect) to run paid agents and make secure on-chain payments*
+*Connect your wallet (Coinbase Wallet, MetaMask, WalletConnect) - fully functional wallet integration with real blockchain connections*
 
 ## 🚀 Installation
 
@@ -292,6 +309,67 @@ Environment variables are stored in:
 ~/.config/wadah-desktop/env-config.json                      # Linux
 %APPDATA%/wadah-desktop/env-config.json                      # Windows
 ```
+
+## 🚧 x402 Payment Status
+
+### What's Working ✅
+
+**Backend (Rust - 100% Complete)**:
+- ✅ Full x402 protocol implementation
+- ✅ Payment verification logic
+- ✅ Facilitator client for Coinbase CDP
+- ✅ `wadah serve` CLI command
+- ✅ All 7/7 unit tests passing
+
+**Frontend (React/Electron - UI Complete)**:
+- ✅ Wallet connection (Coinbase Wallet, MetaMask, WalletConnect)
+- ✅ Real Web3/blockchain integration via wagmi
+- ✅ Multi-chain support (Base, Ethereum, Sepolia)
+- ✅ Complete marketplace UI
+- ✅ Payment dialog UI
+- ✅ Revenue dashboard UI
+
+### What's Mock/WIP ⚠️
+
+**Payment Execution**:
+- ⚠️ Payment button triggers mock 2-second delay
+- ⚠️ Generates fake transaction hash
+- ⚠️ No actual USDC transfer occurs
+- ⚠️ No blockchain transaction submitted
+
+**Revenue Tracking**:
+- ⚠️ All earnings data is hardcoded
+- ⚠️ Transaction history is fake
+- ⚠️ No real blockchain event queries
+
+### To Complete (Est. 4-6 hours) 🔨
+
+1. **Get Coinbase CDP API Keys**:
+   - Sign up at https://portal.cdp.coinbase.com
+   - Create API key and secret
+
+2. **Implement Real Payment Flow**:
+   - EIP-3009 `transferWithAuthorization` signature
+   - USDC contract interaction via viem
+   - Transaction submission and confirmation
+   - Error handling and user feedback
+
+3. **Add Revenue Tracking**:
+   - Query USDC Transfer events
+   - Parse and display real transaction data
+   - On-chain balance verification
+
+4. **Testing**:
+   - Test on Base Sepolia with testnet USDC
+   - Verify end-to-end payment flow
+   - Production deployment
+
+### Documentation
+
+For complete implementation details, see:
+- Backend: `/wadah-engine/docs/X402_IMPLEMENTATION_SUMMARY.md`
+- Protocol: `/wadah-engine/docs/X402_INTEGRATION_PLAN.md`
+- CDP Guide: `/wadah-engine/docs/X402_CDP_INTEGRATION.md`
 
 ## 🤝 Contributing
 
