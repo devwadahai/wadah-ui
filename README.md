@@ -136,15 +136,15 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 *Manage API keys (OpenAI, Anthropic, Ollama), test CLI connection, and view workspace locations*
 
 ### 14. Marketplace - Browse Paid Agents (🚧 WIP)
-![Marketplace](screenshots/Screenshot%202025-11-05%20at%209.00.37%20AM.png)
+![Marketplace](screenshots/17-marketplace.png)
 *Explore premium AI agents with x402 crypto payments - UI complete, payment execution uses mock transactions (real payments WIP)*
 
 ### 15. Wallet Connection - Web3 Integration (✅ Working)
-![Wallet Connection](screenshots/Screenshot%202025-11-05%20at%209.01.02%20AM.png)
+![Wallet Connection](screenshots/18-wallet-connection.png)
 *Connect your wallet (Coinbase Wallet, MetaMask, WalletConnect) - fully functional wallet integration with real blockchain connections*
 
 ### 16. Revenue Dashboard (🚧 WIP - Mock Data)
-![Revenue Dashboard](screenshots/Screenshot%202025-11-05%20at%209.06.10%20AM.png)
+![Revenue Dashboard](screenshots/19-revenue-dashboard.png)
 *Track earnings from paid agents - UI complete with stats and transaction history (currently displays mock data, real blockchain integration WIP)*
 
 ## 🚀 Installation
