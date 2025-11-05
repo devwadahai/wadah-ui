@@ -39,11 +39,13 @@ export default function RunNew() {
   const [agents, setAgents] = useState<Agent[]>([]);
   const [loadingAgents, setLoadingAgents] = useState(true);
   const [runHistory, setRunHistory] = useState<RunHistory[]>([]);
+  const [envVars, setEnvVars] = useState<Record<string, string>>({});
 
   // Load agents on mount
   useEffect(() => {
     loadAgents();
     loadRunHistory();
+    loadEnvVars();
   }, []);
 
   // Get agent from URL if provided
@@ -70,6 +72,19 @@ export default function RunNew() {
       console.error('Failed to load agents:', error);
     } finally {
       setLoadingAgents(false);
+    }
+  };
+
+  const loadEnvVars = async () => {
+    try {
+      if (window.wadahAPI) {
+        const result = await window.wadahAPI.getEnv();
+        if (result) {
+          setEnvVars(result);
+        }
+      }
+    } catch (error) {
+      console.error('Failed to load env vars:', error);
     }
   };
 
@@ -337,11 +352,11 @@ export default function RunNew() {
               <div className="text-xs space-y-1">
                 <div className="flex justify-between p-2 bg-muted rounded">
                   <span className="text-muted-foreground">OPENAI_API_KEY</span>
-                  <span>{process.env.OPENAI_API_KEY ? '✓ Set' : '✗ Not set'}</span>
+                  <span>{envVars.OPENAI_API_KEY ? '✓ Set' : '✗ Not set'}</span>
                 </div>
                 <div className="flex justify-between p-2 bg-muted rounded">
                   <span className="text-muted-foreground">OLLAMA_URL</span>
-                  <span>{process.env.OLLAMA_URL || 'http://localhost:11434'}</span>
+                  <span>{envVars.OLLAMA_URL || 'http://localhost:11434'}</span>
                 </div>
               </div>
               <p className="text-xs text-muted-foreground">
