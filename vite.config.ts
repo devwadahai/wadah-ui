@@ -29,6 +29,17 @@ export default defineConfig(async ({ mode }) => {
       "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
+  css: {
+    postcss: {
+      plugins: [
+        require('tailwindcss'),
+        require('autoprefixer'),
+      ],
+    },
+  },
+  optimizeDeps: {
+    exclude: ['@coinbase/onchainkit'],
+  },
   root: path.resolve(import.meta.dirname, "client"),
   build: {
       outDir: isElectron 

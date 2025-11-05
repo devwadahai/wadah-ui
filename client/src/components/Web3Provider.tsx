@@ -18,7 +18,12 @@ export function Web3Provider({ children }: Web3ProviderProps) {
         <OnchainKitProvider
           apiKey={import.meta.env.VITE_ONCHAINKIT_API_KEY}
           chain={base}
-          projectName="Wadah Desktop"
+          config={{
+            appearance: {
+              mode: 'auto',
+              theme: 'default',
+            },
+          }}
         >
           {children}
         </OnchainKitProvider>
