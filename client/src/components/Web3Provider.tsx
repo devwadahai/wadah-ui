@@ -3,7 +3,16 @@ import { WagmiProvider } from 'wagmi';
 import { wagmiConfig } from '@/config/wagmi';
 import { ReactNode } from 'react';
 
-const queryClient = new QueryClient();
+// Create QueryClient without persistence to avoid IndexedDB errors in Electron
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      gcTime: 1000 * 60 * 60 * 24, // 24 hours
+      staleTime: 1000 * 60 * 5, // 5 minutes
+      retry: 1,
+    },
+  },
+});
 
 interface Web3ProviderProps {
   children: ReactNode;
