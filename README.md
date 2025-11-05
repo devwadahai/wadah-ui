@@ -56,57 +56,59 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 
 ## 📸 Screenshots
 
-### Dashboard
+> A complete walkthrough of Wadah Desktop's features
+
+### 1. Dashboard - Your Command Center
 ![Dashboard](screenshots/01-dashboard.png)
-*Main dashboard with real-time statistics, quick actions, and recent activity*
+*Start here: Overview of your agents, templates, and recent activity with quick access to all features*
 
-### Agents List
+### 2. Agents - Manage Your AI Workforce
 ![Agents List](screenshots/02-agents-list.png)
-*Browse and manage all your AI agents in one place*
+*View, search, and manage all your AI agents with status indicators and quick actions*
 
-### Agent Builder
+### 3. Agent Builder - Create with Templates
 ![Agent Builder](screenshots/03-agent-builder.png)
-*Create new agents from production-ready templates with easy configuration*
+*Build new agents from production-ready templates: customer support, RAG systems, DevOps bots, and more*
 
-### Agent Details
+### 4. Agent Details - Configure & Customize
 ![Agent Details](screenshots/04-agent-details.png)
-*View and edit agent configurations*
+*Fine-tune your agent: model selection, security settings, prompts, and advanced configurations*
 
-### Templates
+### 5. Templates Library
 ![Templates](screenshots/05-templates.png)
-*Browse available templates for different use cases*
+*Explore 6+ production-ready templates spanning customer support, data analysis, RAG systems, and automation*
 
-### Template Details
+### 6. Template Details - Preview Before Creating
 ![Template Details](screenshots/06-template-details.png)
-*Preview template details and clone to create new agents*
+*Read documentation, understand the template structure, and clone to start building*
 
-### Run Agent
+### 7. Run Agent - Execute & Test
 ![Run Agent](screenshots/07-run-agent.png)
-*Execute agents with prompts and configuration*
+*Run your agents with custom prompts, view environment status, and access recent run history*
 
-### Run Output
+### 8. Real-time Output - See Results Live
 ![Run Output](screenshots/08-run-output.png)
-*Real-time execution output and results*
+*Watch your agent execute in real-time with streaming output, cost tracking, and execution details*
 
-### Registry & Packages
+### 9. Registry - Package Management
 ![Registry](screenshots/09-registry.png)
-*Manage local packages and interact with OCI registries*
+*Manage local .wpkg packages, push to OCI registries, and pull shared agents from the community*
 
-### Create Package
+### 10. Create Package - Build for Distribution
 ![Create Package](screenshots/10-create-package.png)
-*Package agents into distributable .wpkg files*
+*Select an agent and package it into an OCI-compliant .wpkg file ready for distribution*
 
-### Push to Registry
+### 11. Push to Registry - Share Your Agents
 ![Push to Registry](screenshots/11-push-registry.png)
-*Push packages to OCI registries (GitHub, Docker Hub, etc.)*
+*Push packages to GitHub Container Registry, Docker Hub, or any OCI-compliant registry with Docker credential support*
 
-### Pull from Registry
+### 12. Pull from Registry - Import Shared Agents
 ![Pull from Registry](screenshots/12-pull-registry.png)
-*Pull packages from OCI registries*
+*Pull packages from registries to share agents across teams or use community-created agents*
 
-### Settings
+### 13. Settings - Configure Your Environment
 ![Settings](screenshots/13-settings.png)
-*Manage environment variables, API keys, and application settings*
+*Manage API keys (OpenAI, Anthropic, Ollama), test CLI connection, and view workspace locations*
 
 ## 🚀 Installation
 
