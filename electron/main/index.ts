@@ -1,4 +1,4 @@
-import { app, BrowserWindow, ipcMain, Tray, Menu, dialog } from 'electron';
+import { app, BrowserWindow, ipcMain, Tray, Menu, dialog, shell } from 'electron';
 import { spawn, ChildProcess } from 'child_process';
 import path from 'path';
 import fs from 'fs';
@@ -56,6 +56,17 @@ function createWindow(): void {
   mainWindow.webContents.on('will-navigate', (event, url) => {
     const currentURL = mainWindow?.webContents.getURL() || '';
     
+    // Allow Coinbase and wallet-related URLs to open in external browser
+    if (url.includes('coinbase.com') || 
+        url.includes('walletconnect.') || 
+        url.includes('accounts.google.com') ||
+        url.includes('oauth') ||
+        url.includes('auth')) {
+      event.preventDefault();
+      shell.openExternal(url);
+      return;
+    }
+    
     // In dev mode, only allow the initial load to localhost:5173
     // Prevent any other navigation attempts so client-side router handles it
     if (process.env.NODE_ENV === 'development') {
@@ -69,6 +80,20 @@ function createWindow(): void {
         event.preventDefault();
       }
     }
+  });
+
+  // Handle new window requests (popups) - open external links in browser
+  mainWindow.webContents.setWindowOpenHandler(({ url }) => {
+    // Open wallet/auth related URLs in external browser
+    if (url.includes('coinbase.com') || 
+        url.includes('walletconnect.') ||
+        url.includes('accounts.google.com') ||
+        url.includes('oauth') ||
+        url.includes('auth') ||
+        url.startsWith('https://')) {
+      shell.openExternal(url);
+    }
+    return { action: 'deny' };
   });
 
   mainWindow.on('closed', () => {
