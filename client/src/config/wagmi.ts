@@ -28,9 +28,12 @@ export const wagmiConfig = createConfig({
       appName: 'Wadah Desktop',
       preference: 'smartWalletOnly',
     }),
-    walletConnect({
-      projectId: import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID || '',
-    }),
+    // Only include WalletConnect if project ID is provided
+    ...(import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID
+      ? [walletConnect({
+          projectId: import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID,
+        })]
+      : []),
   ],
   transports: {
     [base.id]: http(),
