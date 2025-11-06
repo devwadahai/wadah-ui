@@ -21,6 +21,12 @@ export default function Settings() {
   const [showOpenaiKey, setShowOpenaiKey] = useState(false);
   const [saving, setSaving] = useState(false);
   const [saveResult, setSaveResult] = useState<{ success: boolean; message: string } | null>(null);
+  
+  // Web3/Payment settings
+  const [walletConnectProjectId, setWalletConnectProjectId] = useState("");
+  const [showWalletConnectId, setShowWalletConnectId] = useState(false);
+  const [savingWeb3, setSavingWeb3] = useState(false);
+  const [saveWeb3Result, setSaveWeb3Result] = useState<{ success: boolean; message: string } | null>(null);
 
   // Load saved environment variables
   useEffect(() => {
@@ -31,9 +37,11 @@ export default function Settings() {
     if (window.wadahAPI) {
       const openai = await window.wadahAPI.getEnv('OPENAI_API_KEY');
       const ollama = await window.wadahAPI.getEnv('OLLAMA_URL');
+      const wcProjectId = await window.wadahAPI.getEnv('VITE_WALLET_CONNECT_PROJECT_ID');
       
       if (openai) setOpenaiKey(openai);
       if (ollama) setOllamaUrl(ollama);
+      if (wcProjectId) setWalletConnectProjectId(wcProjectId);
     }
   };
 
@@ -84,6 +92,36 @@ export default function Settings() {
       });
     } finally {
       setSaving(false);
+    }
+  };
+
+  const saveWeb3Config = async () => {
+    setSavingWeb3(true);
+    setSaveWeb3Result(null);
+
+    try {
+      if (window.wadahAPI) {
+        if (walletConnectProjectId) {
+          await window.wadahAPI.setEnv('VITE_WALLET_CONNECT_PROJECT_ID', walletConnectProjectId);
+        }
+        
+        setSaveWeb3Result({
+          success: true,
+          message: 'Web3 configuration saved! Restart the app for changes to take effect.'
+        });
+      } else {
+        setSaveWeb3Result({
+          success: false,
+          message: 'Not running in Electron mode'
+        });
+      }
+    } catch (error) {
+      setSaveWeb3Result({
+        success: false,
+        message: String(error)
+      });
+    } finally {
+      setSavingWeb3(false);
     }
   };
 
@@ -166,6 +204,73 @@ export default function Settings() {
           </Button>
             </CardContent>
           </Card>
+
+      {/* Web3 / Payment Settings */}
+      <Card>
+        <CardHeader>
+          <CardTitle>Web3 & Payment Configuration</CardTitle>
+          <CardDescription>
+            Configure wallet connections and crypto payment settings for x402 protocol
+          </CardDescription>
+        </CardHeader>
+        <CardContent className="space-y-4">
+          {saveWeb3Result && (
+            <Alert variant={saveWeb3Result.success ? "default" : "destructive"}>
+              <div className="flex items-start gap-2">
+                {saveWeb3Result.success ? (
+                  <CheckCircle2 className="h-5 w-5 text-green-500" />
+                ) : (
+                  <XCircle className="h-5 w-5" />
+                )}
+                <AlertDescription>{saveWeb3Result.message}</AlertDescription>
+              </div>
+            </Alert>
+          )}
+
+          <div className="space-y-2">
+            <Label htmlFor="wallet-connect-id">
+              WalletConnect Project ID (Optional)
+            </Label>
+            <div className="flex gap-2">
+              <Input
+                id="wallet-connect-id"
+                type={showWalletConnectId ? "text" : "password"}
+                placeholder="Get from cloud.walletconnect.com"
+                value={walletConnectProjectId}
+                onChange={(e) => setWalletConnectProjectId(e.target.value)}
+              />
+              <Button
+                variant="outline"
+                size="icon"
+                onClick={() => setShowWalletConnectId(!showWalletConnectId)}
+              >
+                {showWalletConnectId ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}
+              </Button>
+            </div>
+            <p className="text-xs text-muted-foreground">
+              For WalletConnect integration. Get your project ID at <a href="https://cloud.walletconnect.com" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">cloud.walletconnect.com</a>
+            </p>
+          </div>
+
+          <div className="bg-blue-50 dark:bg-blue-900/10 border border-blue-200 dark:border-blue-800 rounded-lg p-3 space-y-2">
+            <p className="text-xs font-semibold text-blue-900 dark:text-blue-300">
+              💰 Payment Features
+            </p>
+            <ul className="text-xs text-blue-800 dark:text-blue-400 space-y-1">
+              <li>• <strong>Coinbase Wallet</strong> - Built-in Smart Wallet support</li>
+              <li>• <strong>MetaMask</strong> - Injected wallet support</li>
+              <li>• <strong>USDC Payments</strong> - On Base network (low fees)</li>
+              <li>• <strong>x402 Protocol</strong> - HTTP payment protocol for AI agents</li>
+            </ul>
+          </div>
+
+          <Button onClick={saveWeb3Config} disabled={savingWeb3}>
+            {savingWeb3 && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            <Save className="mr-2 h-4 w-4" />
+            Save Web3 Config
+          </Button>
+        </CardContent>
+      </Card>
 
       {/* Wadah CLI Connection */}
           <Card>

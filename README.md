@@ -31,7 +31,7 @@ Wadah Desktop is an Electron-based desktop application that provides a modern, i
 | Agent Marketplace | ✅ Production | Browse and run paid agents with crypto payments |
 | Revenue Dashboard | ✅ Production | Real-time blockchain revenue tracking |
 
-> **✅ Fully Functional**: All x402 crypto payment features are now fully implemented with real blockchain transactions. See [PAYMENT_TESTING_GUIDE.md](PAYMENT_TESTING_GUIDE.md) for testing instructions.
+> **✅ Fully Functional**: All x402 crypto payment features are now fully implemented with real blockchain transactions. See [PAYMENT_TESTING_GUIDE.md](PAYMENT_TESTING_GUIDE.md) for complete testing instructions.
 
 ## ✨ Features
 
