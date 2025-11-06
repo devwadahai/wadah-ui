@@ -12,8 +12,14 @@ release/
 traces/
 *.jsonl
 
-# Environment
+# Environment & API Keys
 .env
+.env.local
+.env*.local
+keys/
+*.pem
+*.key
+*.json
 
 # OS
 .DS_Store
